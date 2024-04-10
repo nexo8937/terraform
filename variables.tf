@@ -151,7 +151,7 @@ variable "health_check_timeout" {
 
 variable "health_check_interval" {
   description = "Interval, in seconds, between health checks"
-  default     = 120
+  default     = 150
 }
 
 variable "health_check_matcher" {
