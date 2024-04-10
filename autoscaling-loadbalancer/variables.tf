@@ -1,3 +1,4 @@
+
 variable "region" {
     description = "AWS region"
     default = "us-east-1"
@@ -5,10 +6,8 @@ variable "region" {
 
 variable "app" {
     description = "Application Name"
-    default = "Brain-Scale-Simple-App"
+    default = "Brain-Scale"
 }
-
-
 
 #Launch Template
 variable "image_id" {
@@ -19,12 +18,9 @@ variable "instance_type" {
     default = "t2.micro"
 }
 
-
-
-
 #Autoscaling
 variable "desired_capacity" {
-    description = "Desired capacity of the autoscaling group"   
+    description = "Desired capacity of the autoscaling group"
     default = 1
 }
 
@@ -34,7 +30,7 @@ variable "max_size" {
 }
 
 variable "min_size" {
-    description = "Minimum size of the autoscaling group"    
+    description = "Minimum size of the autoscaling group"
     default = 1
 }
 
@@ -49,9 +45,7 @@ variable "healthy_check_type" {
   default = "ELB"
 }
 
-
-
-#Autoscaling Policie 
+#Autoscaling Policie
 variable "policy_adjustment_type" {
   description = "The adjustment type for the autoscaling policy"
   default     = "ChangeInCapacity"
@@ -72,8 +66,6 @@ variable "down_scaling_adjustment" {
   default     = -1
 }
 
-
-
 #CloudWatch Metrics
 variable "scale_up_threshold" {
   description = "CPU utilization threshold for triggering scale-up actions"
@@ -81,12 +73,12 @@ variable "scale_up_threshold" {
 }
 
 variable "scale_down_threshold" {
-  description = "CPU utilization threshold for triggering scale-down actions"    
+  description = "CPU utilization threshold for triggering scale-down actions"
   default = "20"
 }
 
 variable "scale_up_period" {
-  description = "The period (in seconds) for evaluating CPU utilization during scale-up" 
+  description = "The period (in seconds) for evaluating CPU utilization during scale-up"
   default = "120"
 }
 
@@ -100,11 +92,9 @@ variable "evaluation_periods" {
   default = "2"
 }
 
-
-
 #LoadBalancer
 variable "app_lb_port_sg" {
-    description = "Loadbalancer security group ports"    
+    description = "Loadbalancer security group ports"
     type = list
     default = ["80"]
 }
@@ -159,42 +149,7 @@ variable "health_check_matcher" {
   default     = "200"
 }
 
-
-
-#Network
-variable "vpc_cidr_block" {
-  description = "The CIDR block for the VPC"
-  default     = "10.0.0.0/16"
-}
-
-variable "pub_sub_A_cidr_block" {
-  description = "The CIDR block for Public Subnet A"
-  default     = "10.0.11.0/24"
-}
-
-variable "pub_sub_B_cidr_block" {
-  description = "The CIDR block for Public Subnet B"
-  default     = "10.0.12.0/24"
-}
-
-variable "priv_sub_A_cidr_block" {
-  description = "The CIDR block for Private Subnet A"
-  default     = "10.0.13.0/24"
-}
-
-variable "priv_sub_B_cidr_block" {
-  description = "The CIDR block for Private Subnet B"
-  default     = "10.0.14.0/24"
-}
-
 variable "load_balancer_type" {
   description = "Type of the load balancer"
   default     = "application"
-}
-
-
-#ECR
-variable "ecr-repo-name" {
-  description = "The name of ecr repository"
-  default     = "brain-scale-simple-application"
 }
