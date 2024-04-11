@@ -22,8 +22,8 @@ Push Docker image to already created ECR
              git cone https://github.com/nexo8937/brainscale.git
              sudo docker build -t brain-scale-simple-app .
              sudo docker login -u AWS -p $(aws ecr get-login-password --region <Youre-region>) <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com
-             docker tag brain-scale-simple-app:latest <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com/<Youre repo name>:latest
-             docker push <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com/<Youre repository name>:latest
+             sudo docker tag brain-scale-simple-app:latest <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com/<Youre repo name>:latest
+             sudo docker push <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com/<Youre repository name>:latest
 
 Deploying autoscaling and application loadbalancer
 
