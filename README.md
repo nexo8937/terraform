@@ -18,6 +18,7 @@ Deploying network(vpc, subnets), ECR and creating ecr-role.
 Push Docker image to already created ECR
             
              cd ../
+             cd brainscale
              git cone https://github.com/nexo8937/brainscale.git
              sudo docker build -t brain-scale-simple-app .
              sudo docker login -u AWS -p $(aws ecr get-login-password --region <Youre-region>) <Youre-account-id>.dkr.ecr.us-east-1.amazonaws.com
