@@ -5,7 +5,7 @@ Before getting started, ensure you have installed the following tools:
 - AWS CLI
 - Docker
 
-Before start set Your s3 bucket informatin for terraform remote_state file and dynamodb file forl lock in terraform-network-ecr/main.tf and terraform-autoscalling-loadbalancer/main.tf
+Set Your s3 bucket informatin for terraform remote_state file and dynamodb file forl lock in terraform-network-ecr/main.tf and terraform-autoscalling-loadbalancer/main.tf
 
 ## Configure AWS Credentials
 
