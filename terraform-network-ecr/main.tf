@@ -11,5 +11,6 @@ terraform {
     bucket = "tfstate-brainscale"
     key    = "network-ecr"
     region = "us-east-1"
+    dynamodb_table =  "terraform-state-lock"
   }
 }
