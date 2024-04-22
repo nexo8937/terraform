@@ -9,7 +9,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "tfstate-brainscale"
-    key    = "network-ecr"
+    key    = "network"
     region = "us-east-1"
     dynamodb_table =  "terraform-lock"
   }

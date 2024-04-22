@@ -13,7 +13,11 @@ Make sure you have your AWS credentials configured using the AWS CLI:
 
 Deploying network(vpc, subnets), ECR and creating ecr-role.
 
-             cd terraform-network-ecr
+             cd terraform-network
+             terraform init
+             terraform apply
+
+             cd ../terraform-ecr
              terraform init
              terraform apply
 
@@ -28,8 +32,13 @@ Push Docker image to already created ECR
 
 Deploying autoscaling and application loadbalancer
 
-             cd terraform-autoscalling-loadbalancer
+             cd terraform-loadbalancer
              terraform init
              terraform apply
 
-After deploying the autoscaling group and load balancer, you will see the load balancer DNS name in the output.
+             cd ../terraform-autoscalling
+             terraform init
+             terraform apply
+
+
+
