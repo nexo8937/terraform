@@ -3,5 +3,5 @@ output "database_sg" {
 }
 
 output "db_endpoint" {
-  value = module.database.rds_endpoint
+  value = module.rds.rds_endpoint
 }
