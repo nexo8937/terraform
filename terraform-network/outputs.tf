@@ -8,3 +8,7 @@ output "private_subnets" {
 output "public_subnets" {
   value = module.network.public_subnets[*]
 }
+
+output "db_subnets" {
+  value = module.network.db_subnets[*]
+}
