@@ -27,7 +27,7 @@ module "autoscalling" {
     scale_down_period         = "120"
     evaluation_periods        = "2"
     target_group              = data.terraform_remote_state.loadbalancer.outputs.load-balancer-target-group
-    database-sg               = data.terraform_remote_state.rds.outputs.rds-access
+    database-sg               = data.terraform_remote_state.rds.outputs.database_sg
 }
 
 #remote-state-data-network
