@@ -27,7 +27,8 @@ module "autoscalling" {
     scale_down_period         = "120"
     evaluation_periods        = "2"
     target_group              = data.terraform_remote_state.loadbalancer.outputs.load-balancer-target-group
-  }
+    database-sg               = data.terraform_remote_state.rds.outputs.rds-access
+}
 
 #remote-state-data-network
 data "terraform_remote_state" "network" {
@@ -59,3 +60,12 @@ data "terraform_remote_state" "loadbalancer" {
    }
  }
 
+#remote-state-rds
+data "terraform_remote_state" "rds" {
+  backend = "s3"
+  config = {
+    bucket = "tfstate-brainscale"
+    key    = "rds"
+    region = "us-east-1"
+  }
+}
