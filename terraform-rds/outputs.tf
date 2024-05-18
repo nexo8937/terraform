@@ -1,5 +1,5 @@
 output "database_sg" {
-  value = module.database.rds-access
+  value = module.rds.rds-access
 }
 
 output "db_endpoint" {
